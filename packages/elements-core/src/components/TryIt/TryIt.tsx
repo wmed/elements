@@ -114,6 +114,8 @@ export const TryIt: React.FC<TryItProps> = ({
     parameter => parameter.required && !parameterValuesWithDefaults[parameter.name],
   );
 
+  console.log(JSON.parse(JSON.stringify(httpOperation)));
+
   const getValues = () =>
     Object.keys(bodyParameterValues)
       .filter(param => !isAllowedEmptyValues[param] ?? true)

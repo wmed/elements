@@ -77,6 +77,18 @@ export const Responses = ({
   if (!responses.length) return null;
 
   const response = responses.find(r => r.code === activeResponseId) || responses[0];
+  (response as any).links = {
+    GetOtePlayer: {
+      description: 'Get the player.',
+      operationId: 'getOtePlayer',
+      parameters: { id: '$response.body#/ote_player/id' },
+    },
+    GetImage: {
+      description: 'Get the image for a player.',
+      operationId: 'getImage',
+      parameters: { path: '$response.body#/ote_player/image_path' },
+    },
+  };
 
   const compactResponses = (
     <>
@@ -219,6 +231,7 @@ const Response = ({ response, onMediaTypeChange }: ResponseProps) => {
               nodeHasChanged={nodeHasChanged}
             />
           )}
+          {JSON.stringify(response)}
         </>
       )}
     </VStack>
