@@ -52,6 +52,7 @@ function parseHttpOperation(rawData: unknown): ParsedNode | undefined {
 
 function parseHttpService(rawData: unknown): ParsedNode | undefined {
   const data = tryParseYamlOrObject(rawData);
+
   if (isHttpService(data)) {
     return {
       type: NodeType.HttpService,

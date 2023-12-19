@@ -1,5 +1,6 @@
 export const DEFAULT_API_URL =
-  'https://raw.githubusercontent.com/stoplightio/elements/main/demo/src/reference/todo.v1.yaml';
+  // 'https://raw.githubusercontent.com/stoplightio/elements/main/demo/src/reference/todo.v1.yaml';
+  '/openapi.json';
 
 export const EXAMPLE_SPECS = [
   {

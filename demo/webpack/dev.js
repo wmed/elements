@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const webpack = require('webpack');
 const commonConfig = require('./common');
+const path = require('node:path');
 
 module.exports = merge(commonConfig, {
   mode: 'development',
@@ -19,6 +20,10 @@ module.exports = merge(commonConfig, {
     historyApiFallback: {
       publicPath: '/',
       disableDotRule: true,
+      static: {
+        directory: path.resolve(__dirname, '..', 'src', 'reference'),
+        publicPath: '/reference',
+      },
     },
   },
   devtool: 'cheap-module-source-map',

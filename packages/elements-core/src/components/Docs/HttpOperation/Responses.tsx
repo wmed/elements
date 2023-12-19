@@ -207,7 +207,6 @@ const Response = ({ response, onMediaTypeChange }: ResponseProps) => {
               />
             </Flex>
           </SectionSubtitle>
-
           {schema && (
             <JsonSchemaViewer
               schema={getOriginalObject(schema)}
@@ -219,6 +218,7 @@ const Response = ({ response, onMediaTypeChange }: ResponseProps) => {
               nodeHasChanged={nodeHasChanged}
             />
           )}
+          {JSON.stringify(schema)}
         </>
       )}
     </VStack>

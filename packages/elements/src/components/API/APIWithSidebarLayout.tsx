@@ -88,6 +88,7 @@ export const APIWithSidebarLayout: React.FC<SidebarLayoutProps> = ({
     </>
   );
 
+  debugger;
   return (
     <SidebarLayout ref={container} sidebar={sidebar}>
       {node && (
